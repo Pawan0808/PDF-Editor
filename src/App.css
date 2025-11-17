@@ -1,0 +1,234 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top, #f3f4ff 0, #f5f5f5 45%, #f1f3f5 100%);
+}
+
+.app-header {
+  padding: 32px 20px 16px;
+  text-align: center;
+}
+
+.app-header h1 {
+  color: #222;
+  margin-bottom: 6px;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+}
+
+.app-header p {
+  color: #5c6c80;
+  font-size: 14px;
+}
+
+.url-input-section {
+  padding: 16px 20px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(148, 163, 184, 0.12);
+}
+
+.url-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #f9fafb;
+}
+
+.url-input:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-color: #007bff;
+}
+
+.fetch-button {
+  padding: 0 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  height: 44px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.fetch-button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #4338ca);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.45);
+}
+
+.fetch-button:disabled {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.fetch-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e5edff, 0 0 0 4px #3b82f6;
+}
+
+.pdf-viewer-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 24px;
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .fetch-button {
+    width: 100%;
+  }
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.highlighter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tool-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.tool-btn:hover {
+  background-color: #f1f3f5;
+}
+
+.tool-btn.active {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.color-picker {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.color-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.active {
+  border-color: #495057;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #495057;
+}
+
+.size-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.size-slider {
+  width: 80px;
+  cursor: pointer;
+}
+
+.size-value {
+  font-size: 14px;
+  color: #495057;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Make the navigation controls more compact on smaller screens */
+@media (max-width: 1200px) {
+  .navigation-controls {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-group, .zoom-group, .export-group, .tool-group {
+    gap: 6px;
+  }
+
+  .nav-btn, .zoom-btn, .export-btn, .tool-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .page-input {
+    width: 40px;
+    padding: 4px;
+  }
+}
+
+/* Adjust for mobile view */
+@media (max-width: 768px) {
+  .navigation-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-group, .zoom-group, .export-group, .tool-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .highlighter-controls {
+    justify-content: center;
+  }
+}
